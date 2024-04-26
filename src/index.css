@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Gorditas:wght@400;700&family=Risque&display=swap');
+body{
+  font-size: 1.5em;
+  text-align: center;
+  /* background: #e41f7b; */
+  background: url('./Images/backImg.jpg');
+  background-size:cover;
+  color: #fff;
+  font-family: "Risque", serif;
+  height: 100%;
+}

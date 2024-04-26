@@ -1,0 +1,69 @@
+.main{
+    max-width: 860px;
+    margin: 40px auto;
+    height: 100%;
+}
+
+button{
+    border: 2px solid #fff;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    color: #fff;
+    border-radius: 5px;
+  }
+  button:hover{
+    background: #c23866;
+    color: #fff;
+  }
+
+  .front , .back{
+    height: 150px;
+    width: 130px;
+    border-radius: 15px;
+    margin: auto;
+  }
+  .card-grid{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+.cards img{
+    display: block;
+    border: 2px solid white;
+  }
+  .cards{
+    position: relative;
+  }
+
+
+  .cards .front{
+    transform: rotateY(90deg);
+    transition: all ease-in 0.2s;
+    position: absolute;
+  }
+  .flipped .front{
+    transform: rotateY(0deg);
+    transition-delay: 0.2s;
+  }
+  .cards .back{
+
+    transition: all ease-in 0.2s;
+    transition-delay: 0.2s;
+  }
+  .flipped .back{
+    transform: rotateY(90deg);  
+    transition-delay: 0s;
+  }
+  @media screen and  (max-width:768px) {
+    
+    .card-grid{
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+    }
+  }
