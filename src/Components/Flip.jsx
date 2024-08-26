@@ -21,6 +21,7 @@ function Flip() {
         const[ choiceOne,setChoiceOne]=useState(null)
         const[ choiceTwo,setchoiceTwo]=useState(null)
         const[ disable,setDisable]=useState(false)
+        const [gameWon, setGameWon] = useState(false)
       
        console.log(cardImages);
         //suffle Cards
@@ -31,7 +32,9 @@ function Flip() {
           setchoiceTwo(null)
           setCards(shuffleCard)
           setTurn(0)
+          setGameWon(false);
         }
+
 
 
 //handle choice
@@ -59,6 +62,13 @@ function Flip() {
         }}
     },[ choiceOne,choiceTwo])
 
+    useEffect(() => {
+        if (cards.length > 0 && cards.every((card) => card.matched)) {
+          setGameWon(true);
+        }
+      }, [cards]);
+
+
     // reset cards and increase turns
     const resetTurns=()=>{
         setChoiceOne(null)
@@ -84,6 +94,7 @@ useEffect(()=>{
         ))}
       </div>
       <p>Turns:{turn}</p>
+      {gameWon && <p>Congratulations! You won the game! 🎉</p>} 
       </div>
 
     </>
